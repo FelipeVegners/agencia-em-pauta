@@ -1,0 +1,301 @@
+@import "base/bootstrap.scss";
+
+// Units
+@mixin mg-16{ margin: 16px 0};
+@mixin mg-24{ margin: 24px 0};
+@mixin pd-bt-12{ padding: 0 0 12px 0};
+
+// Colors
+$background: rgb(20, 20, 20);
+$white: rgb(242, 242, 242);
+$agp-green: rgb(95, 186, 136);
+$agp-red: rgb(192, 26, 26);
+$agp-blue: rgb(57, 77, 228);
+$agp-orange: rgb(255, 164, 57);
+$agp-purple: rgb(177, 47, 238);
+
+// Icons & UI Elements
+$logo-agp-rd: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/logo_agp_rd.svg');
+$icon-calendar: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar.svg');
+$icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard.svg');
+@mixin border-bar {
+  border-left: 10px solid $agp-green;
+  padding-left: 16px !important;
+}
+@mixin cta {
+  @extend .episode-title;
+  letter-spacing: 0.86px;
+  color: $white;
+  border: none;
+  width: 100%;
+  margin: 2px auto 24px auto;
+  padding: 15px 20px 17px 20px;
+  background: $agp-green;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+// Effects
+::-moz-selection {
+  background: $agp-green;
+  color: $white;
+}
+::selection {
+  background: $agp-green;
+  color: $white;
+}
+
+
+// Typography
+.h1-logo {
+  width: 220px;
+  height: 82px;
+  margin-bottom: 60px;
+  background: $logo-agp-rd center center /contain no-repeat;
+  overflow: hidden;
+  color: transparent;
+  text-transform: uppercase;
+  //text-indent: -9999px;
+}
+@mixin icon ($icon) {
+  font: normal bold 22px/1.5 'Open Sans';
+  color: $white;
+  margin-left: 32px;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    left: 32px;
+    background-image: $icon;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+.episode-title {
+  font: normal 700 24px/1.2 'Lato';
+  color: $agp-green;
+}
+.episode-date {
+  font: normal 300 17px/1 'Open Sans';
+  color: $white;
+  text-transform: uppercase;
+  margin: 1.5rem 0 2rem 0;
+
+  & span {
+  padding: 5px 7px;
+  background: $agp-green;
+  font-weight: 700;
+  }
+}
+.content-type {
+  font: normal 300 16px/1.5 'Open Sans';
+  color: $white;
+}
+#form-title {
+  @include border-bar;
+  @include mg-16;
+  margin-bottom: 30px !important;
+  @extend .episode-title;
+  font-size: 28px !important;
+  line-height: 36px !important;
+  color: $white;
+  text-transform: uppercase;
+}
+ul, .ul, li .li {
+  @extend .content-type;
+}
+strong, .strong {
+  @extend .content-type;
+  font-weight: 700;
+}
+.stronger {
+  @extend .content-type;
+  font-weight: 800;
+}
+
+// ================
+// GENERAL STYLES
+// ================
+
+body {
+  background-color: $background !important;
+}
+
+ul ul {
+  margin-left: 24px;
+}
+
+span {
+  text-decoration: none !important;
+}
+
+.-main-bg {
+  background-image: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/main_bg.png') !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+
+.container {
+  background-color: transparent !important;
+}
+
+#container {
+  height: auto !important;
+  position: relative;
+}
+
+#container-header {
+  height: 65px;
+  text-align: center;
+  background-color: transparent !important;
+
+  & img {
+    height: 45px;
+    margin-top: 15px;
+  }
+}
+
+#container-section {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+#content {
+  padding: 48px 30px;
+  & p {
+    @extend .content-type;
+  }
+}
+
+.-logo {
+  @extend .h1-logo;
+  margin-left: 0;
+}
+
+.-icon-title-calendar {
+  @include icon ($icon-calendar);
+  margin-left: 48px;
+  margin-bottom: 24px;
+}
+
+.-icon-title-clapboard {
+  @include icon ($icon-clapboard);
+  margin-top: 60px;
+  margin-left: 48px;
+  margin-bottom: 24px;
+}
+
+#conversion {
+  padding: 0px 40px !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+
+  & section {
+    padding: 0px 30px 30px 20px;
+  }
+
+  & header {
+    padding: 30px 20px;
+  }
+
+  & p, label {
+    @extend .content-type;
+  }
+
+  & .field {
+    @include pd-bt-12;
+    & input[type=radio] {
+      margin-right: 8px;
+    }
+  }
+
+  & .call_button {
+    @include cta;
+
+    &:hover {
+      filter: contrast(150%);
+    }
+  }
+
+  & .notice, a, a:hover {
+    @extend .content-type;
+    font-size: (1rem/1.5);
+    color: rgba($white, 0.65);
+  }
+}
+
+#conversion, #conversion header, #conversion section {
+  background-color: transparent !important;
+}
+
+footer {
+  @extend .content-type;
+  font-size: (1rem/1.2);
+  color: rgba($white, 0.65);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+
+//
+
+// .-channels {
+//   color: #fff;
+//
+//   & h1 {
+//     font: normal bold 2.375em/1.5 'Lato';
+//   }
+//   & p {
+//     font: normal 100 24px/35px 'Open Sans';
+//   }
+//
+//   & .card {
+//     background: transparent;
+//     border: none;
+//     margin-top: 1em;
+//
+//     & h5 {
+//       font: normal 700 1.375em/1.5 'Lato';
+//       padding-bottom: 10px;
+//       border-bottom: 5px solid $agp-red;
+//     }
+//
+//     & h5.-servicos-digitais {
+//       border-color: $agp-red;
+//     }
+//
+//     & h5.-estrutura-agencias {
+//       border-color: $agp-blue;
+//     }
+//
+//     & h5.-sucesso-clientes {
+//       border-color: $agp-orange;
+//     }
+//
+//     & h5.-vendas {
+//       border-color: $agp-purple;
+//     }
+//
+//     & img {
+//       width: 100%;
+//       max-width: 100%;
+//       margin-bottom: 1em;
+//     }
+//   }
+//
+//   & .card-body {
+//     padding: 0;
+//   }
+//
+//   & .card-text {
+//     font: normal 1em/1.5 'Open Sans';
+//     color: rgba(#fff, .65);
+//
+//   }
+// }
