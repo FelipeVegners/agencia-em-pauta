@@ -24,6 +24,7 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
 }
 @mixin cta {
   @extend .episode-title;
+  font-size: 22px;
   letter-spacing: 0.86px;
   color: $white;
   border: none;
@@ -67,7 +68,7 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
     display: block;
     width: 32px;
     height: 32px;
-    left: 32px;
+    left: 16px;
     background-image: $icon;
     background-position: center center;
     background-repeat: no-repeat;
@@ -75,11 +76,11 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
   }
 }
 .episode-title {
-  font: normal 700 24px/1.2 'Lato';
+  font: normal 700 36px/1.4 'Lato';
   color: $agp-green;
 }
 .episode-date {
-  font: normal 300 17px/1 'Open Sans';
+  font: normal 300 28px/1.5 'Open Sans';
   color: $white;
   text-transform: uppercase;
   margin: 1.5rem 0 2rem 0;
@@ -122,6 +123,7 @@ strong, .strong {
 
 body {
   background-color: $background !important;
+  color: $white;
 }
 
 ul ul {
@@ -166,15 +168,30 @@ span {
 }
 
 #content {
+  // display: flex;
+  // align-items: center;
   padding: 48px 30px;
+
   & p {
     @extend .content-type;
   }
+
+  & p.lead {
+
+    font: normal 400 32px/1.8 'Lato';
+    color: #fff;
+
+    & strong {
+      font-size: 32px;
+      font-weight: 900;
+    }
+ }
 }
 
 .-logo {
   @extend .h1-logo;
-  margin-left: 0;
+  width: 320px;
+  height: 140px;
 }
 
 .-icon-title-calendar {
@@ -215,14 +232,6 @@ span {
     }
   }
 
-  & .call_button {
-    @include cta;
-
-    &:hover {
-      filter: contrast(150%);
-    }
-  }
-
   & .notice, a, a:hover {
     @extend .content-type;
     font-size: (1rem/1.5);
@@ -230,16 +239,141 @@ span {
   }
 }
 
+.call_button {
+  @include cta;
+
+  &:hover {
+    filter: contrast(150%);
+  }
+}
+
 #conversion, #conversion header, #conversion section {
   background-color: transparent !important;
 }
+
+// EPISODE DETAILS
+
+.detail-section {
+  background: $background;
+  color: $white;
+
+  & .episode-description {
+    @extend .content-type;
+    font-size: 20px;
+    margin-bottom: 1rem;
+
+    &:not(:first-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  & ul, li ul ul {
+    @extend .content-type;
+    font-size: 20px;
+  }
+
+  & ul {
+    margin-bottom: 0 !important;
+  }
+
+  & li {
+    margin-bottom: 1rem;
+  }
+
+  & ul>ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  & .title-combos {
+  margin-top: 30px !important;
+  margin-bottom: 60px;
+  }
+}
+
+table.episode-details {
+    width: 100%;
+    margin-bottom: 60px;
+}
+table.episode-details td td {
+    padding: 16px 32px 8px;
+}
+table.episode-details>tbody>tr:nth-child(odd) {
+    background-color: rgba(0,0,0,0.02)
+}
+table.episode-details>tbody>tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.07)
+}
+
+table.episode-details>tbody>tr>td:first-child span.day-theme {
+    font-weight:100;
+    text-transform: none;
+    margin-left: 20px;
+}
+table.episode-details>tbody>tr>td:first-child p.lead {
+    font-size: 17px;
+    margin: 0;
+}
+table.episode-details>tbody>tr:nth-child(odd)>td:first-child {
+    background-color: rgba(32,32,32,1);
+    color: #fff;
+    padding: 24px 32px 32px;
+    text-align: left;
+}
+
+table.episode-details table {
+    width: 100%;
+}
+
+table.episode-details table tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02)
+}
+
+table.episode-details table tr td:first-child {
+    background-color: rgba(0,0,0,0.02);
+    min-width: 100px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+// LAST SECTION + CTA
+
+section:last-of-type {
+    background-color: rgb(32,32,32);
+    padding-bottom: 25px;
+    padding-top: 25px;
+
+    & p {
+      @extend .content-type;
+
+      &:first-of-type {
+        margin-top: 30px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    & .-last {
+      width: 160px !important;
+      margin: 30px 0;
+    }
+  }
+
+.section-cta {
+  text-align:center;
+  margin:30px 0;
+}
+
+// FOOTER
 
 footer {
   @extend .content-type;
   font-size: (1rem/1.2);
   color: rgba($white, 0.65);
   text-align: center;
-  margin-bottom: 48px;
+  margin: 48px 0 48px 0;
 }
 
 

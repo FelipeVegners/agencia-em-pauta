@@ -3713,12 +3713,12 @@ a.text-dark:focus, a.text-dark:hover {
   color: transparent;
   text-transform: uppercase; }
 
-.episode-title, #form-title, #conversion .call_button {
-  font: normal 700 24px/1.2 'Lato';
+.episode-title, #form-title, .call_button {
+  font: normal 700 36px/1.4 'Lato';
   color: #5fba88; }
 
 .episode-date {
-  font: normal 300 17px/1 'Open Sans';
+  font: normal 300 28px/1.5 'Open Sans';
   color: #f2f2f2;
   text-transform: uppercase;
   margin: 1.5rem 0 2rem 0; }
@@ -3727,7 +3727,7 @@ a.text-dark:focus, a.text-dark:hover {
     background: #5fba88;
     font-weight: 700; }
 
-.content-type, ul, .ul, li .li, strong, .strong, .stronger, #content p, #conversion p, #conversion label, #conversion .notice, #conversion a, #conversion a:hover, footer {
+.content-type, ul, .ul, li .li, strong, .strong, .stronger, #content p, #conversion p, #conversion label, #conversion .notice, #conversion a, #conversion a:hover, .detail-section .episode-description, .detail-section ul, .detail-section li ul ul, section:last-of-type p, footer {
   font: normal 300 16px/1.5 'Open Sans';
   color: #f2f2f2; }
 
@@ -3748,7 +3748,8 @@ strong, .strong {
   font-weight: 800; }
 
 body {
-  background-color: #141414 !important; }
+  background-color: #141414 !important;
+  color: #f2f2f2; }
 
 ul ul {
   margin-left: 24px; }
@@ -3784,9 +3785,16 @@ span {
 
 #content {
   padding: 48px 30px; }
+  #content p.lead {
+    font: normal 400 32px/1.8 'Lato';
+    color: #fff; }
+    #content p.lead strong {
+      font-size: 32px;
+      font-weight: 900; }
 
 .-logo {
-  margin-left: 0; }
+  width: 320px;
+  height: 140px; }
 
 .-icon-title-calendar {
   font: normal bold 22px/1.5 'Open Sans';
@@ -3800,7 +3808,7 @@ span {
     display: block;
     width: 32px;
     height: 32px;
-    left: 32px;
+    left: 16px;
     background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar.svg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -3819,7 +3827,7 @@ span {
     display: block;
     width: 32px;
     height: 32px;
-    left: 32px;
+    left: 16px;
     background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard.svg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -3838,29 +3846,109 @@ span {
     padding: 0 0 12px 0; }
     #conversion .field input[type=radio] {
       margin-right: 8px; }
-  #conversion .call_button {
-    letter-spacing: 0.86px;
-    color: #f2f2f2;
-    border: none;
-    width: 100%;
-    margin: 2px auto 24px auto;
-    padding: 15px 20px 17px 20px;
-    background: #5fba88;
-    text-transform: uppercase;
-    cursor: pointer; }
-    #conversion .call_button:hover {
-      filter: contrast(150%); }
   #conversion .notice, #conversion a, #conversion a:hover {
     font-size: 0.6666666667rem;
     color: rgba(242, 242, 242, 0.65); }
 
+.call_button {
+  font-size: 22px;
+  letter-spacing: 0.86px;
+  color: #f2f2f2;
+  border: none;
+  width: 100%;
+  margin: 2px auto 24px auto;
+  padding: 15px 20px 17px 20px;
+  background: #5fba88;
+  text-transform: uppercase;
+  cursor: pointer; }
+  .call_button:hover {
+    filter: contrast(150%); }
+
 #conversion, #conversion header, #conversion section {
   background-color: transparent !important; }
+
+.detail-section {
+  background: #141414;
+  color: #f2f2f2; }
+  .detail-section .episode-description {
+    font-size: 20px;
+    margin-bottom: 1rem; }
+    .detail-section .episode-description:not(:first-child) {
+      margin-bottom: 0; }
+  .detail-section ul, .detail-section li ul ul {
+    font-size: 20px; }
+  .detail-section ul {
+    margin-bottom: 0 !important; }
+  .detail-section li {
+    margin-bottom: 1rem; }
+  .detail-section ul > ul li:last-child {
+    margin-bottom: 0; }
+  .detail-section .title-combos {
+    margin-top: 30px !important;
+    margin-bottom: 60px; }
+
+table.episode-details {
+  width: 100%;
+  margin-bottom: 60px; }
+
+table.episode-details td td {
+  padding: 16px 32px 8px; }
+
+table.episode-details > tbody > tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.02); }
+
+table.episode-details > tbody > tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.07); }
+
+table.episode-details > tbody > tr > td:first-child span.day-theme {
+  font-weight: 100;
+  text-transform: none;
+  margin-left: 20px; }
+
+table.episode-details > tbody > tr > td:first-child p.lead {
+  font-size: 17px;
+  margin: 0; }
+
+table.episode-details > tbody > tr:nth-child(odd) > td:first-child {
+  background-color: #202020;
+  color: #fff;
+  padding: 24px 32px 32px;
+  text-align: left; }
+
+table.episode-details table {
+  width: 100%; }
+
+table.episode-details table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02); }
+
+table.episode-details table tr td:first-child {
+  background-color: rgba(0, 0, 0, 0.02);
+  min-width: 100px;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 20px; }
+
+section:last-of-type {
+  background-color: #202020;
+  padding-bottom: 25px;
+  padding-top: 25px; }
+  section:last-of-type p:first-of-type {
+    margin-top: 30px; }
+  section:last-of-type p:last-of-type {
+    margin-bottom: 0; }
+  section:last-of-type .-last {
+    width: 160px !important;
+    margin: 30px 0; }
+
+.section-cta {
+  text-align: center;
+  margin: 30px 0; }
 
 footer {
   font-size: 0.8333333333rem;
   color: rgba(242, 242, 242, 0.65);
   text-align: center;
-  margin-bottom: 48px; }
+  margin: 48px 0 48px 0; }
 
 /*# sourceMappingURL=styles.css.map */
