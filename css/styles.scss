@@ -16,8 +16,8 @@ $agp-purple: rgb(177, 47, 238);
 
 // Icons & UI Elements
 $logo-agp-rd: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/logo_agp_rd.svg');
-$icon-calendar: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar.svg');
-$icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard.svg');
+$icon-calendar: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar_blk.svg');
+$icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard_blk.svg');
 @mixin border-bar {
   border-left: 10px solid $agp-green;
   padding-left: 16px !important;
@@ -51,7 +51,7 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
 .h1-logo {
   width: 220px;
   height: 82px;
-  margin-bottom: 60px;
+  margin-bottom: 160px;
   background: $logo-agp-rd center center /contain no-repeat;
   overflow: hidden;
   color: transparent;
@@ -60,7 +60,7 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
 }
 @mixin icon ($icon) {
   font: normal bold 22px/1.5 'Open Sans';
-  color: $white;
+  color: $background;
   margin-left: 32px;
   &::before {
     content: '';
@@ -76,12 +76,12 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
   }
 }
 .episode-title {
-  font: normal 700 36px/1.4 'Lato';
+  font: normal 700 30px/1.4 'Lato';
   color: $agp-green;
 }
 .episode-date {
-  font: normal 300 28px/1.5 'Open Sans';
-  color: $white;
+  font: normal 300 24px/1.5 'Open Sans';
+  color: $background;
   text-transform: uppercase;
   margin: 1.5rem 0 2rem 0;
 
@@ -93,13 +93,12 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
 }
 .content-type {
   font: normal 300 16px/1.5 'Open Sans';
-  color: $white;
+  color: $background;
 }
 #form-title {
   @include border-bar;
-  @include mg-16;
-  margin-bottom: 30px !important;
   @extend .episode-title;
+  margin: 30px 0 !important;
   font-size: 28px !important;
   line-height: 36px !important;
   color: $white;
@@ -178,12 +177,24 @@ span {
 
   & p.lead {
 
+    display: block;
+    position: relative;
     font: normal 400 32px/1.8 'Lato';
     color: #fff;
 
     & strong {
       font-size: 32px;
       font-weight: 900;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -30px;
+        width: 60px;
+        height: 5px;
+        background: $agp-green;
+      }
     }
  }
 }
@@ -223,6 +234,7 @@ span {
 
   & p, label {
     @extend .content-type;
+    color: $white;
   }
 
   & .field {
@@ -252,14 +264,18 @@ span {
 }
 
 // EPISODE DETAILS
+.-text-black {
+  color: $background !important;
+}
 
 .detail-section {
-  background: $background;
-  color: $white;
+  background: $white;
+  color: $background;
+  padding: 60px 0;
 
   & .episode-description {
     @extend .content-type;
-    font-size: 20px;
+    //font-size: 20px;
     margin-bottom: 1rem;
 
     &:not(:first-child) {
@@ -269,11 +285,12 @@ span {
 
   & ul, li ul ul {
     @extend .content-type;
-    font-size: 20px;
+    //font-size: 20px;
   }
 
   & ul {
     margin-bottom: 0 !important;
+    margin-left: 2.5rem;
   }
 
   & li {
@@ -285,8 +302,8 @@ span {
   }
 
   & .title-combos {
-  margin-top: 30px !important;
-  margin-bottom: 60px;
+  //margin-top: 30px !important;
+  margin-bottom: 45px;
   }
 }
 
@@ -298,10 +315,10 @@ table.episode-details td td {
     padding: 16px 32px 8px;
 }
 table.episode-details>tbody>tr:nth-child(odd) {
-    background-color: rgba(0,0,0,0.02)
+    background-color: rgba(32, 32, 32, 0.02);
 }
 table.episode-details>tbody>tr:nth-child(even) {
-    background-color: rgba(0,0,0,0.07)
+    background-color: $white;
 }
 
 table.episode-details>tbody>tr>td:first-child span.day-theme {
@@ -314,8 +331,7 @@ table.episode-details>tbody>tr>td:first-child p.lead {
     margin: 0;
 }
 table.episode-details>tbody>tr:nth-child(odd)>td:first-child {
-    background-color: rgba(32,32,32,1);
-    color: #fff;
+    background-color: rgba(32,32,32,0.02);
     padding: 24px 32px 32px;
     text-align: left;
 }
@@ -325,11 +341,11 @@ table.episode-details table {
 }
 
 table.episode-details table tr:nth-child(even) {
-    background-color: rgba(0,0,0,0.02)
+    background-color: rgba(32,32,32,0.02);
 }
 
 table.episode-details table tr td:first-child {
-    background-color: rgba(0,0,0,0.02);
+    background-color: rgba(32,32,32,0.02);
     min-width: 100px;
     text-align: left;
     font-family: 'Open Sans', sans-serif;
@@ -339,13 +355,14 @@ table.episode-details table tr td:first-child {
 
 // LAST SECTION + CTA
 
-section:last-of-type {
+section.last-cta {
     background-color: rgb(32,32,32);
     padding-bottom: 25px;
     padding-top: 25px;
 
     & p {
       @extend .content-type;
+      color: $white;
 
       &:first-of-type {
         margin-top: 30px;
@@ -353,6 +370,11 @@ section:last-of-type {
 
       &:last-of-type {
         margin-bottom: 0;
+        color: $white;
+      }
+
+      & strong {
+        color: $white;
       }
     }
     & .-last {

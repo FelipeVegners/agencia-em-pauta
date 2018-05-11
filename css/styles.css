@@ -3707,19 +3707,19 @@ a.text-dark:focus, a.text-dark:hover {
 .h1-logo, .-logo {
   width: 220px;
   height: 82px;
-  margin-bottom: 60px;
+  margin-bottom: 160px;
   background: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/logo_agp_rd.svg") center center/contain no-repeat;
   overflow: hidden;
   color: transparent;
   text-transform: uppercase; }
 
 .episode-title, #form-title, .call_button {
-  font: normal 700 36px/1.4 'Lato';
+  font: normal 700 30px/1.4 'Lato';
   color: #5fba88; }
 
 .episode-date {
-  font: normal 300 28px/1.5 'Open Sans';
-  color: #f2f2f2;
+  font: normal 300 24px/1.5 'Open Sans';
+  color: #141414;
   text-transform: uppercase;
   margin: 1.5rem 0 2rem 0; }
   .episode-date span {
@@ -3727,15 +3727,14 @@ a.text-dark:focus, a.text-dark:hover {
     background: #5fba88;
     font-weight: 700; }
 
-.content-type, ul, .ul, li .li, strong, .strong, .stronger, #content p, #conversion p, #conversion label, #conversion .notice, #conversion a, #conversion a:hover, .detail-section .episode-description, .detail-section ul, .detail-section li ul ul, section:last-of-type p, footer {
+.content-type, ul, .ul, li .li, strong, .strong, .stronger, #content p, #conversion p, #conversion label, #conversion .notice, #conversion a, #conversion a:hover, .detail-section .episode-description, .detail-section ul, .detail-section li ul ul, section.last-cta p, footer {
   font: normal 300 16px/1.5 'Open Sans';
-  color: #f2f2f2; }
+  color: #141414; }
 
 #form-title {
   border-left: 10px solid #5fba88;
   padding-left: 16px !important;
-  margin: 16px 0;
-  margin-bottom: 30px !important;
+  margin: 30px 0 !important;
   font-size: 28px !important;
   line-height: 36px !important;
   color: #f2f2f2;
@@ -3786,11 +3785,21 @@ span {
 #content {
   padding: 48px 30px; }
   #content p.lead {
+    display: block;
+    position: relative;
     font: normal 400 32px/1.8 'Lato';
     color: #fff; }
     #content p.lead strong {
       font-size: 32px;
       font-weight: 900; }
+      #content p.lead strong::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -30px;
+        width: 60px;
+        height: 5px;
+        background: #5fba88; }
 
 .-logo {
   width: 320px;
@@ -3798,7 +3807,7 @@ span {
 
 .-icon-title-calendar {
   font: normal bold 22px/1.5 'Open Sans';
-  color: #f2f2f2;
+  color: #141414;
   margin-left: 32px;
   margin-left: 48px;
   margin-bottom: 24px; }
@@ -3809,14 +3818,14 @@ span {
     width: 32px;
     height: 32px;
     left: 16px;
-    background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar.svg");
+    background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar_blk.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain; }
 
 .-icon-title-clapboard {
   font: normal bold 22px/1.5 'Open Sans';
-  color: #f2f2f2;
+  color: #141414;
   margin-left: 32px;
   margin-top: 60px;
   margin-left: 48px;
@@ -3828,7 +3837,7 @@ span {
     width: 32px;
     height: 32px;
     left: 16px;
-    background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard.svg");
+    background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard_blk.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain; }
@@ -3842,6 +3851,8 @@ span {
     padding: 0px 30px 30px 20px; }
   #conversion header {
     padding: 30px 20px; }
+  #conversion p, #conversion label {
+    color: #f2f2f2; }
   #conversion .field {
     padding: 0 0 12px 0; }
     #conversion .field input[type=radio] {
@@ -3867,25 +3878,26 @@ span {
 #conversion, #conversion header, #conversion section {
   background-color: transparent !important; }
 
+.-text-black {
+  color: #141414 !important; }
+
 .detail-section {
-  background: #141414;
-  color: #f2f2f2; }
+  background: #f2f2f2;
+  color: #141414;
+  padding: 60px 0; }
   .detail-section .episode-description {
-    font-size: 20px;
     margin-bottom: 1rem; }
     .detail-section .episode-description:not(:first-child) {
       margin-bottom: 0; }
-  .detail-section ul, .detail-section li ul ul {
-    font-size: 20px; }
   .detail-section ul {
-    margin-bottom: 0 !important; }
+    margin-bottom: 0 !important;
+    margin-left: 2.5rem; }
   .detail-section li {
     margin-bottom: 1rem; }
   .detail-section ul > ul li:last-child {
     margin-bottom: 0; }
   .detail-section .title-combos {
-    margin-top: 30px !important;
-    margin-bottom: 60px; }
+    margin-bottom: 45px; }
 
 table.episode-details {
   width: 100%;
@@ -3895,10 +3907,10 @@ table.episode-details td td {
   padding: 16px 32px 8px; }
 
 table.episode-details > tbody > tr:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.02); }
+  background-color: rgba(32, 32, 32, 0.02); }
 
 table.episode-details > tbody > tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.07); }
+  background-color: #f2f2f2; }
 
 table.episode-details > tbody > tr > td:first-child span.day-theme {
   font-weight: 100;
@@ -3910,8 +3922,7 @@ table.episode-details > tbody > tr > td:first-child p.lead {
   margin: 0; }
 
 table.episode-details > tbody > tr:nth-child(odd) > td:first-child {
-  background-color: #202020;
-  color: #fff;
+  background-color: rgba(32, 32, 32, 0.02);
   padding: 24px 32px 32px;
   text-align: left; }
 
@@ -3919,25 +3930,30 @@ table.episode-details table {
   width: 100%; }
 
 table.episode-details table tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.02); }
+  background-color: rgba(32, 32, 32, 0.02); }
 
 table.episode-details table tr td:first-child {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(32, 32, 32, 0.02);
   min-width: 100px;
   text-align: left;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 20px; }
 
-section:last-of-type {
+section.last-cta {
   background-color: #202020;
   padding-bottom: 25px;
   padding-top: 25px; }
-  section:last-of-type p:first-of-type {
-    margin-top: 30px; }
-  section:last-of-type p:last-of-type {
-    margin-bottom: 0; }
-  section:last-of-type .-last {
+  section.last-cta p {
+    color: #f2f2f2; }
+    section.last-cta p:first-of-type {
+      margin-top: 30px; }
+    section.last-cta p:last-of-type {
+      margin-bottom: 0;
+      color: #f2f2f2; }
+    section.last-cta p strong {
+      color: #f2f2f2; }
+  section.last-cta .-last {
     width: 160px !important;
     margin: 30px 0; }
 
