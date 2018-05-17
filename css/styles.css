@@ -3696,6 +3696,88 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+#ypt_wrapper {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  max-width: 100%;
+  box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2em; }
+
+#ypt_thumbs {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 24px 0 0;
+  padding: 0;
+  height: 420px; }
+
+#ypt_thumbs li {
+  list-style: none;
+  width: 40%;
+  margin: 0 0 16px;
+  position: relative;
+  font-size: 0;
+  cursor: pointer; }
+
+#ypt_thumbs li img {
+  width: 100%;
+  background-color: red; }
+  #ypt_thumbs li img:hover {
+    -webkit-filter: grayscale(0.6);
+    filter: grayscale(0.6); }
+
+#ypt_thumbs li p {
+  font-size: 14px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding: 0 0 0 10%;
+  margin: 0 0 0 100%; }
+
+#ypt_thumbs li:hover p {
+  display: block;
+  cursor: pointer; }
+
+#ypt_thumbs .ypt-now-playing p {
+  display: block; }
+
+#ypt_thumbs .ypt-now-playing > span::after {
+  content: "\25b6  Now playing";
+  /* A traingle pointing right */
+  margin-top: -1em;
+  display: block;
+  width: 100%;
+  padding: 5%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  font-size: 10px; }
+
+#ypt_wrapper .video {
+  position: relative;
+  width: 100%;
+  /*height: 0;*/
+  padding-bottom: 48.4%;
+  float: left; }
+
+#ypt_wrapper .video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  float: left; }
+
+@media only screen and (max-width: 400px) {
+  #ypt_thumbs {
+    display: none; }
+
+  #ypt_wrapper .video {
+    width: 100%;
+    padding-bottom: 56.25%; } }
 ::-moz-selection {
   background: #5fba88;
   color: #f2f2f2; }
@@ -3715,7 +3797,8 @@ a.text-dark:focus, a.text-dark:hover {
 
 .episode-title, #form-title, .call_button {
   font: normal 700 30px/1.4 'Lato';
-  color: #5fba88; }
+  color: #5fba88;
+  margin-bottom: 2rem; }
 
 .episode-date {
   font: normal 300 24px/1.5 'Open Sans';
@@ -3727,9 +3810,9 @@ a.text-dark:focus, a.text-dark:hover {
     background: #5fba88;
     font-weight: 700; }
 
-.content-type, ul, .ul, li .li, strong, .strong, .stronger, #content p, #conversion p, #conversion label, #conversion .notice, #conversion a, #conversion a:hover, .detail-section .episode-description, .detail-section ul, .detail-section li ul ul, section.last-cta p, footer {
+.content-type, ul, .ul, li .li, strong, .strong, .stronger, #content p, #conversion p, #conversion label, #conversion .notice, #conversion a, #conversion a:hover, .detail-section .episode-description, .detail-section ul, .detail-section li ul ul, section.last-cta p, footer, .-channels .card-text {
   font: normal 300 16px/1.5 'Open Sans';
-  color: #141414; }
+  color: #f2f2f2; }
 
 #form-title {
   border-left: 10px solid #5fba88;
@@ -3784,31 +3867,36 @@ span {
 
 #content {
   padding: 48px 30px; }
-  #content p.lead {
+  #content p.welcome-text {
     display: block;
     position: relative;
-    font: normal 400 32px/1.8 'Lato';
+    font: normal 300 22px/1.6 'Open Sans';
     color: #fff; }
-    #content p.lead strong {
-      font-size: 32px;
-      font-weight: 900; }
-      #content p.lead strong::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: -30px;
-        width: 60px;
-        height: 5px;
-        background: #5fba88; }
+    #content p.welcome-text strong {
+      font-size: 22px;
+      font-weight: 700; }
+    #content p.welcome-text::before {
+      content: '';
+      color: red;
+      position: absolute;
+      left: 0;
+      top: -30px;
+      width: 60px;
+      height: 5px;
+      background: #5fba88; }
 
 .-logo {
   width: 320px;
   height: 140px; }
 
+.-white {
+  color: #f2f2f2; }
+
 .-icon-title-calendar {
   font: normal bold 22px/1.5 'Open Sans';
   color: #141414;
   margin-left: 32px;
+  color: #f2f2f2;
   margin-left: 48px;
   margin-bottom: 24px; }
   .-icon-title-calendar::before {
@@ -3818,7 +3906,7 @@ span {
     width: 32px;
     height: 32px;
     left: 16px;
-    background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar_blk.svg");
+    background-image: url("https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain; }
@@ -3886,9 +3974,12 @@ span {
   color: #141414;
   padding: 60px 0; }
   .detail-section .episode-description {
+    color: #141414;
     margin-bottom: 1rem; }
     .detail-section .episode-description:not(:first-child) {
       margin-bottom: 0; }
+  .detail-section ul, .detail-section li ul ul {
+    color: #141414; }
   .detail-section ul {
     margin-bottom: 0 !important;
     margin-left: 2.5rem; }
@@ -3966,5 +4057,116 @@ footer {
   color: rgba(242, 242, 242, 0.65);
   text-align: center;
   margin: 48px 0 48px 0; }
+
+.-channels {
+  color: #fff; }
+  .-channels h1 {
+    font: normal bold 2.375em/1.5 'Lato'; }
+  .-channels .card {
+    background: transparent;
+    border: none;
+    margin-top: 1em;
+    margin-bottom: 90px; }
+    .-channels .card h5 {
+      font: normal 700 1.375em/1.5 'Lato';
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 5px solid #c01a1a;
+      cursor: pointer;
+      transition: all .2s ease-in-out; }
+    .-channels .card h5.-servicos-digitais {
+      border-color: #c01a1a; }
+      .-channels .card h5.-servicos-digitais:hover {
+        background: rgba(192, 26, 26, 0.35);
+        padding-left: 16px; }
+    .-channels .card h5.-estrutura-agencias {
+      border-color: #394de4; }
+      .-channels .card h5.-estrutura-agencias:hover {
+        background: rgba(57, 77, 228, 0.35);
+        padding-left: 16px; }
+    .-channels .card h5.-sucesso-clientes {
+      border-color: #ffa439; }
+      .-channels .card h5.-sucesso-clientes:hover {
+        background: rgba(255, 164, 57, 0.35);
+        padding-left: 16px; }
+    .-channels .card h5.-vendas {
+      border-color: #b12fee; }
+      .-channels .card h5.-vendas:hover {
+        background: rgba(177, 47, 238, 0.35);
+        padding-left: 16px; }
+    .-channels .card img {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1em; }
+  .-channels .card-body {
+    padding: 0; }
+  .-channels .card-text {
+    color: rgba(255, 255, 255, 0.65); }
+  .-channels .card-bg {
+    padding: 1rem;
+    background: rgba(242, 242, 242, 0.1);
+    cursor: pointer; }
+    .-channels .card-bg:hover {
+      background: rgba(242, 242, 242, 0.15); }
+
+#container-playlist h1.-logo {
+  width: 160px;
+  height: 60px;
+  margin-bottom: 60px; }
+#container-playlist img.-logo-rd {
+  width: 190px;
+  float: right; }
+
+.-player-wrapper {
+  margin-top: 30px; }
+
+p.next-episodes {
+  margin-top: 42px; }
+
+.channel-title {
+  font: normal 700 38px/1.5 'Lato';
+  padding-bottom: 10px;
+  border-bottom: 5px solid #c01a1a;
+  margin-bottom: 1rem; }
+
+#video-title {
+  font: normal normal 28px/1.8 'Lato'; }
+
+@media screen and (min-width: 908px) {
+  #container > section {
+    padding: 2% 0 2% 0;
+    min-height: 75%; } }
+@media screen and (max-width: 320px) {
+  #container-playlist {
+    margin-bottom: 0;
+    flex-direction: column-reverse; }
+    #container-playlist div.col-sm-12 {
+      text-align: center; }
+    #container-playlist img.-logo-rd {
+      width: 160px;
+      float: none;
+      margin: 15px 0; }
+    #container-playlist h1.-logo {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      margin-top: 15px;
+      margin-bottom: 30px;
+      margin-left: -6px; }
+
+  .channel-title {
+    font-size: calc(1.375rem + 1vw); }
+
+  #video-title {
+    font-size: calc(1.2rem + 1vw); }
+
+  p.next-episodes {
+    display: none; }
+
+  .-channels {
+    padding-top: 30px; }
+
+  .col-md-3 {
+    height: 100px; } }
 
 /*# sourceMappingURL=styles.css.map */

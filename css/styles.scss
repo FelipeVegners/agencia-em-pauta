@@ -1,4 +1,5 @@
 @import "base/bootstrap.scss";
+@import "_playlist.scss";
 
 // Units
 @mixin mg-16{ margin: 16px 0};
@@ -16,7 +17,7 @@ $agp-purple: rgb(177, 47, 238);
 
 // Icons & UI Elements
 $logo-agp-rd: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/logo_agp_rd.svg');
-$icon-calendar: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar_blk.svg');
+$icon-calendar: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar.svg');
 $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard_blk.svg');
 @mixin border-bar {
   border-left: 10px solid $agp-green;
@@ -78,6 +79,7 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
 .episode-title {
   font: normal 700 30px/1.4 'Lato';
   color: $agp-green;
+  margin-bottom: 2rem;
 }
 .episode-date {
   font: normal 300 24px/1.5 'Open Sans';
@@ -93,7 +95,7 @@ $icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-p
 }
 .content-type {
   font: normal 300 16px/1.5 'Open Sans';
-  color: $background;
+  color: $white;
 }
 #form-title {
   @include border-bar;
@@ -175,26 +177,26 @@ span {
     @extend .content-type;
   }
 
-  & p.lead {
-
+  & p.welcome-text {
     display: block;
     position: relative;
-    font: normal 400 32px/1.8 'Lato';
+    font: normal 300 22px/1.6 'Open Sans';
     color: #fff;
 
     & strong {
-      font-size: 32px;
-      font-weight: 900;
+      font-size: 22px;
+      font-weight: 700;
+    }
 
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: -30px;
-        width: 60px;
-        height: 5px;
-        background: $agp-green;
-      }
+    &::before {
+      content: '';
+      color: red;
+      position: absolute;
+      left: 0;
+      top: -30px;
+      width: 60px;
+      height: 5px;
+      background: $agp-green;
     }
  }
 }
@@ -205,8 +207,13 @@ span {
   height: 140px;
 }
 
+.-white {
+  color: $white;
+}
+
 .-icon-title-calendar {
   @include icon ($icon-calendar);
+  color: $white;
   margin-left: 48px;
   margin-bottom: 24px;
 }
@@ -275,7 +282,7 @@ span {
 
   & .episode-description {
     @extend .content-type;
-    //font-size: 20px;
+    color: $background;
     margin-bottom: 1rem;
 
     &:not(:first-child) {
@@ -285,6 +292,7 @@ span {
 
   & ul, li ul ul {
     @extend .content-type;
+    color: $background;
     //font-size: 20px;
   }
 
@@ -398,60 +406,183 @@ footer {
   margin: 48px 0 48px 0;
 }
 
+// CHANNELS (WELCOME LP)
+.-channels {
+  color: #fff;
 
-//
+  & h1 {
+    font: normal bold 2.375em/1.5 'Lato';
+  }
 
-// .-channels {
-//   color: #fff;
-//
-//   & h1 {
-//     font: normal bold 2.375em/1.5 'Lato';
-//   }
-//   & p {
-//     font: normal 100 24px/35px 'Open Sans';
-//   }
-//
-//   & .card {
-//     background: transparent;
-//     border: none;
-//     margin-top: 1em;
-//
-//     & h5 {
-//       font: normal 700 1.375em/1.5 'Lato';
-//       padding-bottom: 10px;
-//       border-bottom: 5px solid $agp-red;
-//     }
-//
-//     & h5.-servicos-digitais {
-//       border-color: $agp-red;
-//     }
-//
-//     & h5.-estrutura-agencias {
-//       border-color: $agp-blue;
-//     }
-//
-//     & h5.-sucesso-clientes {
-//       border-color: $agp-orange;
-//     }
-//
-//     & h5.-vendas {
-//       border-color: $agp-purple;
-//     }
-//
-//     & img {
-//       width: 100%;
-//       max-width: 100%;
-//       margin-bottom: 1em;
-//     }
-//   }
-//
-//   & .card-body {
-//     padding: 0;
-//   }
-//
-//   & .card-text {
-//     font: normal 1em/1.5 'Open Sans';
-//     color: rgba(#fff, .65);
-//
+  & .card {
+    background: transparent;
+    border: none;
+    margin-top: 1em;
+    margin-bottom: 90px;
+
+    & h5 {
+      font: normal 700 1.375em/1.5 'Lato';
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 5px solid $agp-red;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+    }
+
+    & h5.-servicos-digitais {
+      border-color: $agp-red;
+      &:hover {
+        background: rgba($agp-red, .35);
+        padding-left: 16px;
+      }
+    }
+
+    & h5.-estrutura-agencias {
+      border-color: $agp-blue;
+      &:hover {
+        background: rgba($agp-blue, .35);
+        padding-left: 16px;
+      }
+    }
+
+    & h5.-sucesso-clientes {
+      border-color: $agp-orange;
+      &:hover {
+        background: rgba($agp-orange, .35);
+        padding-left: 16px;
+      }
+    }
+
+    & h5.-vendas {
+      border-color: $agp-purple;
+      &:hover {
+        background: rgba($agp-purple, .35);
+        padding-left: 16px;
+      }
+    }
+
+    & img {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1em;
+    }
+  }
+
+  & .card-body {
+    padding: 0;
+  }
+
+  & .card-text {
+    @extend .content-type;
+    color: rgba(#fff, .65);
+  }
+
+  .card-bg {
+    padding: 1rem;
+    background: rgba($white, .10);
+    cursor: pointer;
+
+    &:hover {
+      background: rgba($white, .15);
+    }
+  }
+  
+}
+
+// PLAYLIST LP
+#container-playlist {
+
+  & h1.-logo {
+    width: 160px;
+    height: 60px;
+    margin-bottom: 60px;
+  }
+  & img.-logo-rd {
+    width: 190px;
+    float: right;
+  }
+}
+
+// .-intro-text {
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     width: 50px;
+//     height: 3px;
+//     background: $agp-green;
+//     top: -16px;
 //   }
 // }
+
+.-player-wrapper {
+  margin-top: 30px;
+}
+
+p.next-episodes {
+  margin-top: 42px;
+}
+
+.channel-title {
+  font: normal 700 38px/1.5 'Lato';
+  padding-bottom: 10px;
+  border-bottom: 5px solid $agp-red;
+  margin-bottom: 1rem;
+}
+
+#video-title {
+  font: normal normal 28px/1.8 'Lato';
+}
+
+@media screen and (min-width: 908px) {
+  #container > section {
+    padding: 2% 0 2% 0;
+    min-height: 75%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  #container-playlist {
+    margin-bottom: 0;
+    flex-direction: column-reverse;
+
+    & div.col-sm-12 {
+      text-align: center;
+    }
+
+    & img.-logo-rd {
+      width: 160px;
+      float: none;
+      margin: 15px 0;
+    }
+
+    h1.-logo {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      margin-top: 15px;
+      margin-bottom: 30px;
+      margin-left: -6px;
+    }
+  }
+
+  .channel-title {
+    font-size: calc(1.375rem + 1vw);
+  }
+
+  #video-title {
+    font-size: calc(1.2rem + 1vw);
+  }
+
+  p.next-episodes {
+    display: none;
+  }
+
+  .-channels {
+    padding-top: 30px;
+  }
+
+  .col-md-3 {
+    height: 100px;
+  }
+}
