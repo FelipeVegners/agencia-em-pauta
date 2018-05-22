@@ -13,7 +13,7 @@ var nowPlayingClass = "." + nowPlaying;
 var ypt_index = 0; //Playlists begin at the first video by default
 
 function getPlaylistData(playlistID, video_list, page_token) { //Makes a single request to Youtube Data API
-  var apiKey = 'AIzaSyArQNfmJDkjxP_ZyZIocbyuDeyTanf4Rl8';
+  var apiKey = 'AIzaSyDbsCOHK5p2nVc2W4u4qWZJgWQU3H7-PNo';
   var theUrl =
   'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet' +
   '&maxResults='+ 50 + //Can be anything from 1-50
@@ -125,7 +125,31 @@ window.onYouTubeIframeAPIReady = function() { // Creates an <iframe> (and YouTub
     } else { //yay it's not IOS!
     player.playVideoAt(ypt_index); //Play the new video, does not work for IOS 7
   }
+
   jQuery(nowPlayingClass).removeClass(nowPlaying); //Remove "now playing" from the thumb that is no longer playing
   //When the new video starts playing, its thumb will get the now playing class
 }); //jQuery(document).on('click','#ypt_thumbs...
+
+jQuery('.playlist-button').click(function() {
+  var playlist_id = jQuery(this).data('playlist');
+  getPlaylistData(playlist_id);
+
+  jQuery('#player').remove();
+  jQuery('.video').html('<div id="player"></div>');
+  jQuery('#player').attr('data-pl', playlist_id);
+
+  player = new YT.Player('player', {
+    height: '360',
+    width: '640',
+    playerVars:
+    {
+      listType:'playlist',
+      list: playlist_id
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+});
 };

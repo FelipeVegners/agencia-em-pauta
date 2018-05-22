@@ -1,5 +1,102 @@
-// YOUTUBE API - PLAYLIST styles
+// PLAYLIST LP
+#container-playlist {
 
+  & h1.-logo {
+    width: 160px;
+    height: 60px;
+    margin-bottom: 60px;
+  }
+  & img.-logo-rd {
+    width: 190px;
+    float: right;
+  }
+}
+
+// .-intro-text {
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     width: 50px;
+//     height: 3px;
+//     background: $agp-green;
+//     top: -16px;
+//   }
+// }
+
+.-player-wrapper {
+  margin-top: 30px;
+}
+
+p.next-episodes {
+  margin-top: 42px;
+}
+
+.channel-title {
+  font: normal 700 38px/1.5 'Lato';
+  padding-bottom: 10px;
+  border-bottom: 5px solid $agp-red;
+  margin-bottom: 1rem;
+}
+
+#video-title {
+  font: normal normal 22px/1.8 'Lato' !important;
+}
+
+@media screen and (min-width: 908px) {
+  #container > section {
+    padding: 2% 0 2% 0;
+    min-height: 75%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  #container-playlist {
+    margin-bottom: 0;
+    flex-direction: column-reverse;
+
+    & div.col-sm-12 {
+      text-align: center;
+    }
+
+    & img.-logo-rd {
+      width: 160px;
+      float: none;
+      margin: 15px 0;
+    }
+
+    h1.-logo {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      margin-top: 15px;
+      margin-bottom: 30px;
+      margin-left: -6px;
+    }
+  }
+
+  .channel-title {
+    font-size: calc(1.375rem + 1vw);
+  }
+
+  #video-title {
+    font-size: calc(1.2rem + 1vw);
+  }
+
+  p.next-episodes {
+    display: none;
+  }
+
+  .-channels {
+    padding-top: 30px;
+  }
+
+  .col-md-3 {
+    height: 100px;
+  }
+}
+
+// YOUTUBE API - PLAYLIST styles
 #ypt_wrapper {
   width: 100%;
   background: #000;
@@ -10,37 +107,36 @@
   margin-bottom: 2em;
 }
 #ypt_thumbs {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  margin: 24px 0 0;
-  padding: 0;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  margin: 24px 0 0 !important;
+  padding: 0 !important;
   height: 420px;
 }
 #ypt_thumbs li {
-  list-style: none;
-  width: 40%;
-  margin: 0 0 16px;
-  position: relative;
+  list-style: none !important;
+  width: 40% !important;
+  margin: 0 0 16px !important;
+  position: relative !important;
   font-size: 0;
   cursor: pointer;
 }
 
 #ypt_thumbs li img{
-  width: 100%;
-  background-color: red;
+  width: 100% !important;
   &:hover {
   -webkit-filter: grayscale(0.6);
   filter: grayscale(0.6);
   }
 }
 #ypt_thumbs li p {
-  font-size: 14px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  font-size: 14px !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
   color: #fff;
-  padding: 0 0 0 10%;
-  margin: 0 0 0 100%;
+  padding: 0 0 0 10% !important;
+  margin: 0 0 0 100% !important;
 }
 #ypt_thumbs li:hover p {
   display: block;
