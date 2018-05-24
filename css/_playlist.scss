@@ -31,15 +31,30 @@ p.next-episodes {
   margin-top: 42px;
 }
 
-.channel-title {
+#channel-title {
   font: normal 700 38px/1.5 'Lato';
   padding-bottom: 10px;
-  border-bottom: 5px solid $agp-red;
   margin-bottom: 1rem;
 }
 
+.agp-red {
+  border-bottom: 5px solid $agp-red;
+}
+
+.agp-blue {
+  border-bottom: 5px solid $agp-blue;
+}
+
+.agp-orange {
+  border-bottom: 5px solid $agp-orange;
+}
+
+.agp-purple {
+  border-bottom: 5px solid $agp-purple;
+}
+
 #video-title {
-  font: normal normal 22px/1.8 'Lato' !important;
+  font: normal normal 22px/1.4 'Lato' !important;
 }
 
 @media screen and (min-width: 908px) {
@@ -130,7 +145,7 @@ p.next-episodes {
   }
 }
 #ypt_thumbs li p {
-  font-size: 14px !important;
+  font-size: 12px !important;
   position: absolute !important;
   width: 100% !important;
   height: 100% !important;

@@ -1,0 +1,31 @@
+// Icons & UI Elements
+$logo-agp-rd: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/logo_agp_rd.svg');
+$icon-calendar: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/calendar.svg');
+$icon-clapboard: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/clapboard_blk.svg');
+@mixin border-bar {
+  border-left: 10px solid $agp-green;
+  padding-left: 16px !important;
+}
+@mixin cta {
+  @extend .episode-title;
+  font-size: 22px;
+  letter-spacing: 0.86px;
+  color: $white;
+  border: none;
+  width: 100%;
+  margin: 2px auto 24px auto;
+  padding: 15px 20px 17px 20px;
+  background: $agp-green;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+// Effects
+::-moz-selection {
+  background: $agp-green;
+  color: $white;
+}
+::selection {
+  background: $agp-green;
+  color: $white;
+}

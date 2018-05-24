@@ -1,0 +1,88 @@
+// EPISODE DETAILS
+.-text-black {
+  color: $background !important;
+}
+
+.detail-section {
+  background: $white;
+  color: $background;
+  padding: 60px 0;
+
+  & .episode-description {
+    @extend .content-type;
+    color: $background;
+    margin-bottom: 1rem;
+
+    &:not(:first-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  & ul, li ul ul {
+    @extend .content-type;
+    color: $background;
+  }
+
+  & ul {
+    margin-bottom: 0 !important;
+    margin-left: 2.5rem;
+  }
+
+  & li {
+    margin-bottom: 1rem;
+  }
+
+  & ul>ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  & .title-combos {
+  margin-bottom: 45px;
+  }
+}
+
+table.episode-details {
+    width: 100%;
+    margin-bottom: 60px;
+}
+table.episode-details td td {
+    padding: 16px 32px 8px;
+}
+table.episode-details>tbody>tr:nth-child(odd) {
+    background-color: rgba(32, 32, 32, 0.02);
+}
+table.episode-details>tbody>tr:nth-child(even) {
+    background-color: $white;
+}
+
+table.episode-details>tbody>tr>td:first-child span.day-theme {
+    font-weight:100;
+    text-transform: none;
+    margin-left: 20px;
+}
+table.episode-details>tbody>tr>td:first-child p.lead {
+    font-size: 17px;
+    margin: 0;
+}
+table.episode-details>tbody>tr:nth-child(odd)>td:first-child {
+    background-color: rgba(32,32,32,0.02);
+    padding: 24px 32px 32px;
+    text-align: left;
+}
+
+table.episode-details table {
+    width: 100%;
+}
+
+table.episode-details table tr:nth-child(even) {
+    background-color: rgba(32,32,32,0.02);
+}
+
+table.episode-details table tr td:first-child {
+    background-color: rgba(32,32,32,0.02);
+    min-width: 100px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}

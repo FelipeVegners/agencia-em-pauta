@@ -3905,14 +3905,25 @@ span {
 p.next-episodes {
   margin-top: 42px; }
 
-.channel-title {
+#channel-title {
   font: normal 700 38px/1.5 'Lato';
   padding-bottom: 10px;
-  border-bottom: 5px solid #c01a1a;
   margin-bottom: 1rem; }
 
+.agp-red {
+  border-bottom: 5px solid #c01a1a; }
+
+.agp-blue {
+  border-bottom: 5px solid #394de4; }
+
+.agp-orange {
+  border-bottom: 5px solid #ffa439; }
+
+.agp-purple {
+  border-bottom: 5px solid #b12fee; }
+
 #video-title {
-  font: normal normal 22px/1.8 'Lato' !important; }
+  font: normal normal 22px/1.4 'Lato' !important; }
 
 @media screen and (min-width: 908px) {
   #container > section {
@@ -3981,7 +3992,7 @@ p.next-episodes {
     filter: grayscale(0.6); }
 
 #ypt_thumbs li p {
-  font-size: 14px !important;
+  font-size: 12px !important;
   position: absolute !important;
   width: 100% !important;
   height: 100% !important;
@@ -4048,35 +4059,35 @@ p.next-episodes {
       border-bottom: 5px solid #c01a1a;
       cursor: pointer;
       transition: all .2s ease-in-out; }
+    .-channels .card:hover h5.card-title.-servicos-digitais {
+      background: rgba(192, 26, 26, 0.35);
+      padding-left: 16px; }
+    .-channels .card:hover h5.card-title.-estrutura-agencias {
+      background: rgba(57, 77, 228, 0.35);
+      padding-left: 10px; }
+    .-channels .card:hover h5.card-title.-sucesso-clientes {
+      background: rgba(255, 164, 57, 0.35);
+      padding-left: 16px; }
+    .-channels .card:hover h5.card-title.-vendas {
+      background: rgba(177, 47, 238, 0.35);
+      padding-left: 16px; }
     .-channels .card h5.-servicos-digitais {
       border-color: #c01a1a; }
-      .-channels .card h5.-servicos-digitais:hover {
-        background: rgba(192, 26, 26, 0.35);
-        padding-left: 16px; }
       .-channels .card h5.-servicos-digitais.-active {
         background: rgba(192, 26, 26, 0.35);
         padding-left: 16px; }
     .-channels .card h5.-estrutura-agencias {
       border-color: #394de4; }
-      .-channels .card h5.-estrutura-agencias:hover {
-        background: rgba(57, 77, 228, 0.35);
-        padding-left: 16px; }
       .-channels .card h5.-estrutura-agencias.-active {
         background: rgba(57, 77, 228, 0.35);
         padding-left: 16px; }
     .-channels .card h5.-sucesso-clientes {
       border-color: #ffa439; }
-      .-channels .card h5.-sucesso-clientes:hover {
-        background: rgba(255, 164, 57, 0.35);
-        padding-left: 16px; }
       .-channels .card h5.-sucesso-clientes.-active {
         background: rgba(255, 164, 57, 0.35);
         padding-left: 16px; }
     .-channels .card h5.-vendas {
       border-color: #b12fee; }
-      .-channels .card h5.-vendas:hover {
-        background: rgba(177, 47, 238, 0.35);
-        padding-left: 16px; }
       .-channels .card h5.-vendas.-active {
         background: rgba(177, 47, 238, 0.35);
         padding-left: 16px; }

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Open+Sans:300,700,800');
+
+// Typography
+.h1-logo {
+  width: 220px;
+  height: 82px;
+  margin-bottom: 160px;
+  background: $logo-agp-rd center center /contain no-repeat;
+  overflow: hidden;
+  color: transparent;
+  text-transform: uppercase;
+  //text-indent: -9999px;
+}
+@mixin icon ($icon) {
+  font: normal bold 22px/1.5 'Open Sans';
+  color: $background;
+  margin-left: 32px;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    left: 16px;
+    background-image: $icon;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+.episode-title {
+  font: normal 700 30px/1.4 'Lato' !important;
+  color: $agp-green ;
+  margin-bottom: 2rem ;
+}
+.episode-date {
+  font: normal 300 24px/1.5 'Open Sans' !important;
+  color: $background;
+  text-transform: uppercase !important;
+  margin: 1.5rem 0 2rem 0 !important;
+
+  & span {
+  padding: 5px 7px;
+  background: $agp-green;
+  font-weight: 700 !important;
+  }
+}
+.-white {
+  color: $white;
+}
+.content-type {
+  font: normal 300 16px/1.5 'Open Sans' !important;
+  color: $white;
+}
+#form-title {
+  @include border-bar;
+  @extend .episode-title;
+  margin: 30px 0 !important;
+  font-size: 28px !important;
+  line-height: 36px !important;
+  color: $white ;
+  text-transform: uppercase !important;
+}
+ul, .ul, li .li {
+  @extend .content-type;
+}
+strong, .strong {
+  @extend .content-type;
+  font-weight: 700 !important;
+}
+.stronger {
+  @extend .content-type;
+  font-weight: 800 !important;
+}

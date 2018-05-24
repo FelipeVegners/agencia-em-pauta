@@ -1,0 +1,137 @@
+// ================
+// GENERAL STYLES
+// ================
+
+body {
+  background-color: $background !important;
+  color: $white;
+}
+
+ul ul {
+  margin-left: 24px;
+}
+
+span {
+  text-decoration: none !important;
+}
+
+
+.-main-bg {
+  background-image: url('https://s3.amazonaws.com/rd-marketing-objects/agencia-em-pauta/s02/lp/main_bg.png') !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+
+.container {
+  background-color: transparent !important;
+}
+
+#container {
+  height: auto !important;
+  position: relative;
+}
+
+#container-header {
+  display: none !important;
+}
+
+#container-section {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+#content {
+  & p {
+    @extend .content-type;
+  }
+
+  & p.welcome-text {
+    display: block;
+    position: relative;
+    font: normal 300 22px/1.6 'Open Sans' !important;
+    color: #fff;
+
+    & strong {
+      font-size: 22px !important;
+      font-weight: 700 !important;
+    }
+
+    &::before {
+      content: '';
+      color: red;
+      position: absolute;
+      left: 0;
+      top: -30px;
+      width: 60px;
+      height: 5px;
+      background: $agp-green;
+    }
+ }
+}
+
+.-logo {
+  @extend .h1-logo;
+  width: 320px;
+  height: 140px;
+}
+
+.-icon-title-calendar {
+  @include icon ($icon-calendar);
+  color: $white;
+  margin-left: 60px;
+  margin-bottom: 24px;
+}
+
+.-icon-title-clapboard {
+  @include icon ($icon-clapboard);
+  margin-top: 60px;
+  margin-left: 48px;
+  margin-bottom: 24px;
+}
+
+#conversion {
+  padding: 0px 40px !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+
+  & section {
+    padding: 0px 30px 30px 20px;
+  }
+
+  & header {
+    padding: 30px 20px;
+  }
+
+  & p, label {
+    @extend .content-type;
+    color: $white;
+  }
+
+  & .field {
+    @include pd-bt-12;
+    & input[type=radio] {
+      margin-right: 8px;
+    }
+  }
+
+  & .notice, a, a:hover {
+    @extend .content-type;
+    font-size: (1rem/1.5);
+    color: rgba($white, 0.65);
+  }
+}
+
+.call_button {
+  @include cta;
+
+  &:hover {
+    filter: contrast(150%);
+  }
+}
+
+#conversion, #conversion header, #conversion section {
+  background-color: transparent !important;
+}

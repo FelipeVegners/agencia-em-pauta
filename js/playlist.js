@@ -13,7 +13,7 @@ var nowPlayingClass = "." + nowPlaying;
 var ypt_index = 0; //Playlists begin at the first video by default
 
 function getPlaylistData(playlistID, video_list, page_token) { //Makes a single request to Youtube Data API
-  var apiKey = 'AIzaSyDbsCOHK5p2nVc2W4u4qWZJgWQU3H7-PNo';
+  var apiKey = 'AIzaSyAJoM15s0gVHw7pPUTbH3bL6TEgabc4JVA';
   var theUrl =
   'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet' +
   '&maxResults='+ 50 + //Can be anything from 1-50
@@ -46,10 +46,8 @@ function buildHTML(data){ //Turns JSON data into HTML elements
   for(i = 0; i < data.length; i++){ //Do this to each item in the JSON list
     var item = data[i].snippet; //Each Youtube playlist item snippet
     if(!item.thumbnails){continue;} //private videos do no reveal thumbs, so skip them
-    list_data += '<li data-ypt-index="'+ i +'"><p>' + item.title + '</p><span class="tint"><img alt="'+ item.title +'" src="'+ item.thumbnails.medium.url +'" data-image="teste"/></span></li>'; //create an element and add it to the list
+    list_data += '<li data-ypt-index="'+ i +'"><p>' + item.title + '</p><span class="tint"><img alt="'+ item.title +'" src="'+ item.thumbnails.medium.url +'"/></span></li>'; //create an element and add it to the list
 
-    var videoTitle = document.getElementById('video-title');
-    videoTitle.innerHTML = item.title;
   }
   ypt_thumbs.innerHTML = list_data; //After the for loop, insert that list of links into the html
 
@@ -84,7 +82,6 @@ window.onYouTubeIframeAPIReady = function() { // Creates an <iframe> (and YouTub
 
   // When the player does something...
   function onPlayerStateChange(event) {
-
     //Let's check on what video is playing
     var currentIndex = player.getPlaylistIndex();
     var the_thumbs = ypt_thumbs.getElementsByTagName('li');
@@ -132,11 +129,15 @@ window.onYouTubeIframeAPIReady = function() { // Creates an <iframe> (and YouTub
 
 jQuery('.playlist-button').click(function() {
   var playlist_id = jQuery(this).data('playlist');
-  getPlaylistData(playlist_id);
+
+  var channelTitle = $(this).find('h5.card-title').text();
+  var titleStyle = jQuery(this).data('color');
+  jQuery('#channel-title').text(channelTitle).attr('class', 'agp-' + titleStyle);
 
   jQuery('#player').remove();
   jQuery('.video').html('<div id="player"></div>');
   jQuery('#player').attr('data-pl', playlist_id);
+  getPlaylistData(playlist_id);
 
   player = new YT.Player('player', {
     height: '360',
